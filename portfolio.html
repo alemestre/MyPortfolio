@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e1b7235c4f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style_portforlio.css">
+    <title>Mon Portfolio</title>
+</head>
+<body>
+        <nav class="navbar">
+            <a href="" id="navbar__logo" class="fas fa-gem"> </a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item"> <a href="#home"class="navbar__links">Home</a></li>
+                <li class="navbar__item"><a href="#about-me" class="navbar__links">About Me</a></li>
+                <li class="navbar__item"><a href="#skills" class="navbar__links">Skills</a></li>
+                <li class="navbar__item"><a href="#portfolio" class="navbar__links">Projects</a></li>
+                <li class="navbar__btn"><a href="" class="navbar__btn">Contact</a></li>
+            </ul> 
+        </nav>
+    <main>
+        <section class="home" id="home">
+            <div class="home__container">
+                <div class="home__content">
+                    <p class="je-suis"> Je suis</p><h1>Amélie Le Mestre</h1>
+                    <h2>Developpeuse web </h2>
+                    <p>............................</p>
+                    
+                    <button class="btn home__btn"> <a href="#contact">Me contacter</a></button>
+                </div>
+                <div class="main__img--container"></div>
+            </div>
+        </section>
+        <section class="about-me" id="about-me">
+            <div class="about-me__content">
+                <h1> A propos </h1>
+                <p>Après dix années passées dans l'industrie musicale en tant que chef de projet, j'ai décidé de me réorienter dans un secteur plus porteur et dynamique ; le numérique.</p>
+                <p>En parallèle de mon ancien poste, je me suis formée en autodidacte aux langages de programmation informatique de base. J’ai souhaité approfondir mes compétences dans ce domaine en intégrant la formation de Développeur-Intégrateur Web et Web Mobile proposée par Metz Numeric School d'une durée de 9 mois (délivrant un titre RNCP de niveau 5 - équivalent Bac+2). </p>
+                <p>Autonome, rigoureuse, curieuse, et aimant évoluant en équipe, je suis à la recherche d'un stage en entreprise de 3 semaines (à partir du 20 juin 2022) pour valider cette formation, qui me passionne particulièrement.</p>
+                <button class="btn about-me__btn"> <a href="CV_Le Mestre-Amelie.pdf" target="_blank"> Télécharger mon CV</a></button>
+            </div>
+        </section>
+        <section class="skills">
+            <div class="skills__heading"  id="skills">
+                <h1>Compétences</h1>
+                <div class="skills__content">
+                    <div class="skills--bars">
+                        <div class="skills--text">
+                            <h2>Mes compétences</h2>
+                            <P></P>
+                        </div>
+                        <div class="skills--box">
+                            <i class="fab fa-html5">
+                                <h3>HTML</h3>
+                            </i>
+                            <span>95%</span>
+                            <div class="percent-bar html-bar"></div>
+                        </div>
+                        <div class="skills--box">
+                            <i class="fab fa-css3">
+                                <h3>CSS</h3>
+                            </i>
+                            <span>90%</span>
+                            <div class="percent-bar css-bar"></div>
+                        </div>
+                        <div class="skills--box">
+                            <i class="fab fa-js">
+                                <h3>Javascript</h3>
+                            </i>
+                            <span>75%</span>
+                            <div class="percent-bar js-bar"></div>
+                        </div>
+                        <div class="skills--box">
+                            <i class="fab fa-php">
+                                <h3>PHP</h3>
+                            </i>
+                            <span>50%</span>
+                            <div class="percent-bar php-bar"></div>
+                        </div>
+                        <div class="skills--box">
+                            <i class="fas fa-database">
+                                <h3>MySQL</h3>
+                            </i>
+                            <span>70%</span>
+                            <div class="percent-bar sql-bar"></div>
+                        </div>
+                    </div>
+                    <div class="skills__img">
+                        <img src="skills_pic.svg" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio" id="portfolio">
+            <h1>Portfolio</h1>
+            <div class="portfolio__content">
+                <div class="card">
+                    <div class="box">
+                        <div class="content content1">
+                            <h2>01</h2>
+                            <h3>La Ferme du Petit Marais</h3>
+                            <p> Site web d'un magasin de produits locaux </p>
+                            <p> Langages utilisés : HTML, CSS, JS, PHP</p>
+                            <a class="btn__card" href="https://ferme-du-petit-marais.com/Ferme-du-petit-marais.html">Regardez de plus près</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <div class="content content2">
+                            <h2>02</h2>
+                            <h3>Ars-Industries</h3>
+                            <p>Site vitrine Wordpress</p>
+                            <a class="btn__card" href="https://www.ars-industries.fr/fr/ars-industries/">Regardez de plus près</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contact" id="contact">
+            <h1>Contact</h1>
+            <div class="contact__content">
+                <div class="contact__info">
+                    <i class="fas fa-phone-alt">
+                    <p>06 48 31 16 78</p>
+                </div>
+                <div class="contact__info">
+                    <i class="fas fa-envelope-open"></i>
+                    <p>amelie.le.mestre@gmail.com</p>
+                </div>
+                <div class="contact__info social">
+                    <a href=""><i class="fab fa-facebook"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <a href=""><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div>
+                <form action="formulaire.php" method="post" class="formulaire">
+                    <div>
+                        <label for="nom">Nom :</label>
+                        <input type="text" name="nom"> 
+                    </div>
+                    <div>
+                        <label for="prenom">Prénom :</label>
+                        <input type="text" name="prenom">
+                    </div>
+                    <div>
+                        <label for="email">E-mail :</label>
+                        <input type="email" name="" id="email">
+                    </div>
+                    <div>
+                        <label for="tel">Telephone :</label>
+                        <input type="tel" name="tel" id="tel">
+                    </div>
+                    <div>
+                        <label for="comment">Votre message :</label>
+                        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+                    </div>
+                        <input type="submit" value="Envoyer"> 
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="javascript_portfolio.js"></script>
+</body>
+</html>
