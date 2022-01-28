@@ -26,10 +26,8 @@
         <section class="home" id="home">
             <div class="home__container">
                 <div class="home__content">
-                    <p class="je-suis"> Je suis</p><h1>Amélie Le Mestre</h1>
+                    <p class="je-suis"> Je suis</p><h1></h1>
                     <h2>Developpeuse web </h2>
-                    <p>............................</p>
-                    
                     <button class="btn home__btn"> <a href="#contact">Me contacter</a></button>
                 </div>
                 <div class="main__img--container"></div>
@@ -44,8 +42,8 @@
                 <button class="btn about-me__btn"> <a href="CV_Le Mestre-Amelie.pdf" target="_blank"> Télécharger mon CV</a></button>
             </div>
         </section>
-        <section class="skills">
-            <div class="skills__heading"  id="skills">
+        <section id="skills">
+            <div class="skills__heading"  >
                 <h1>Compétences</h1>
                 <div class="skills__content">
                     <div class="skills--bars">
@@ -100,6 +98,7 @@
             <div class="portfolio__content">
                 <div class="card">
                     <div class="box">
+                        <img src="logo-sf_ferme-du-petit-marais.png" alt="logo_ferme-du-petit-marais" class="logo-ferme">
                         <div class="content content1">
                             <h2>01</h2>
                             <h3>La Ferme du Petit Marais</h3>
@@ -111,6 +110,7 @@
                 </div>
                 <div class="card">
                     <div class="box">
+                        <img src="Ars-Industries-logo.svg" alt="logo-ars-industries" class="logo-ars">
                         <div class="content content2">
                             <h2>02</h2>
                             <h3>Ars-Industries</h3>
@@ -125,44 +125,48 @@
             <h1>Contact</h1>
             <div class="contact__content">
                 <div class="contact__info">
-                    <i class="fas fa-phone-alt">
+                <div class="info__box">
+                    <i class="fas fa-phone"></i>
                     <p>06 48 31 16 78</p>
                 </div>
-                <div class="contact__info">
+                <div class="info__box">
                     <i class="fas fa-envelope-open"></i>
                     <p>amelie.le.mestre@gmail.com</p>
                 </div>
-                <div class="contact__info social">
+                <div class="info__box social">
                     <a href=""><i class="fab fa-facebook"></i></a>
                     <a href=""><i class="fab fa-twitter"></i></a>
                     <a href=""><i class="fab fa-github"></i></a>
                 </div>
             </div>
-            <div>
-                <form action="formulaire.php" method="post" class="formulaire">
+            <div class="formulaire">
+                <form action="formulaire.php" method="post" >
                     <div>
-                        <label for="nom">Nom :</label>
-                        <input type="text" name="nom"> 
+                        <label for="nom"></label>
+                        <input type="text" name="nom" placeholder="Nom"> 
                     </div>
                     <div>
-                        <label for="prenom">Prénom :</label>
-                        <input type="text" name="prenom">
+                        <label for="prenom"></label>
+                        <input type="text" name="prenom" placeholder="Prénom">
                     </div>
                     <div>
-                        <label for="email">E-mail :</label>
-                        <input type="email" name="" id="email">
+                        <label for="email"></label>
+                        <input type="email" name="" id="email" placeholder="Votre email">
                     </div>
                     <div>
-                        <label for="tel">Telephone :</label>
-                        <input type="tel" name="tel" id="tel">
+                        <label for="tel"></label>
+                        <input type="tel" name="tel" id="tel" placeholder="Votre téléphone">
                     </div>
                     <div>
-                        <label for="comment">Votre message :</label>
-                        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+                        <label for="comment"></label>
+                        <textarea name="comment" id="comment" cols="30" rows="4" placeholder="Tapper votre message"></textarea>
                     </div>
-                        <input type="submit" value="Envoyer"> 
+                    <div class="btn__form">
+                        <input class="btn" type="submit" value="Envoyer"> 
+                    </div>
                 </form>
             </div>
+        </div>
         </section>
     </main>
     <script src="javascript_portfolio.js"></script>
