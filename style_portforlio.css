@@ -109,6 +109,10 @@ body {
     width: 100%;
 }
 
+.navbar__menu{
+    order:2
+}
+
 .navbar__menu__content
 {
     display: flex;
@@ -621,7 +625,7 @@ form div {
 } 
 
 .btn.btn__form::after {
-    z-index: 1000;
+    z-index: -1;
 }
 
 

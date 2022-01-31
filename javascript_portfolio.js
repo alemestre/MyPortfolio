@@ -1,23 +1,26 @@
-function burgerMenu () {
+function burgerMenu() {
     const menu = document.getElementById('mobile-menu')
-    const navbarMenu = document.querySelector(".navbar__menu")
+    const navBarMenu = document.querySelector(".navbar__menu")
     const navBarContent = document.querySelector(".navbar__menu__content")
-    const header = document.querySelector('header')
+    const items = document.querySelector("navbar__menu__content>li")
+    console.log(items)
 
 
-menu.addEventListener ('click', function (){
-    menu.classList.toggle('is-active');
-    navbarMenu.classList.toggle('is-active');
-    navBarContent.classList.toggle('is-active');
-    header.classList.toggle('is-active');
-    console.log('ok')
-})
+    menu.addEventListener('click', function () {
+        menu.classList.toggle('is-active');
+        navBarMenu.classList.toggle('is-active');
+        navBarContent.classList.toggle('is-active');
+        console.log('ok')
+    })
+    navBarContent.addEventListener('click', function() {
+        navBarMenu.classList.remove('is-active')
+    })
 }
 
 burgerMenu()
 
 // Apparition titre 
-let h1= document.querySelector("h1")
+let h1 = document.querySelector("h1")
 let h2AboutMe = document.querySelector(".about-me h2")
 let h2Skills = document.querySelector(".skills h2")
 let h2Portfolio = document.querySelector(".portfolio>h2")
@@ -26,54 +29,52 @@ let h2Contact = document.querySelector(".contact>h2")
 let textH1 = "Amélie Le Mestre"
 let textH2About = "A propos"
 let textH2Skills = "Compétences"
-let textH2Portofio = "Projets"
+let textH2Portofio = "Portfolio"
 let textH2Contact = "Contact"
 
 
 
 titre = [h1, h2AboutMe, h2Skills, h2Portfolio, h2Contact];
-texte = [textH1,textH2About, textH2Skills, textH2Portofio, textH2Contact]
+texte = [textH1, textH2About, textH2Skills, textH2Portofio, textH2Contact]
 
-console.log (titre, texte)
+elements = [[h1, textH1, 0,100], [h2AboutMe, textH2About,0,150], [h2Skills, textH2Skills,0,150], [h2Portfolio,textH2Portofio,0,150], [h2Contact,textH2Contact,0,150]]
 
 
 
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (
-      rect.bottom >= 0 &&
-      rect.right >= 0 &&
-      rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+        rect.bottom >= 0 &&
+        rect.right >= 0 &&
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.left <= (window.innerWidth || document.documentElement.clientWidth)
     );
-  }
+}
 
 
-scroll1 = 0
-document.addEventListener("scroll", function () {
-    if (scroll1 == 0) {
-        for(let n=0; n<= titre.length ; n++) {
-            if(isInViewport(titre[n])) {
-                typeWriter(titre[n],texte[n]);
-            }
-            scroll1 = 1;
-        }
- 
+function typeWriter(element, txt,i,speed) {
+    console.log(txt, speed)
+
+    if (i < txt.length) {
+        element.innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(function () {
+            typeWriter(element, txt,i, speed);
+        }, speed);
     }
+}
+
+document.addEventListener("scroll", function () {
+    elements.forEach(element => {
+        if (element[2] == 0) {
+            if (isInViewport(element[0])) {
+                typeWriter(element[0], element[1],0, element[3]);
+                element[2] = 1;
+            }
+
+        }
+    });
+
 })
 
 
-let i = 0;
-
-var speed = 100; 
-
-function typeWriter(element,txt) {
-    console.log(txt)
-  if (i < txt.length) {
-    element.innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(function () {
-        typeWriter(element,txt);
-    }, speed);
-  }
-}
