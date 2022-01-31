@@ -18,13 +18,24 @@ main {
     background-color: #141414;
 }
 
-h1 {
+.home h1 {
     color: #ffb199;
     font-size: 3rem;
     padding: 10px 0px;
     font-weight: 600;
 }
 
+h2 {
+    color: #fff;
+    background-image:linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+    background-clip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-text-fill-color: transparent; 
+    font-size: 3rem;
+    padding: 10px 0px;
+}
 
 
 body::-webkit-scrollbar{
@@ -98,7 +109,7 @@ body {
     width: 100%;
 }
 
-.navbar__menu
+.navbar__menu__content
 {
     display: flex;
     justify-content: center;
@@ -164,6 +175,9 @@ body {
 
 .home {
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -171,9 +185,10 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items : center;
-    justify-content: center;
+    justify-content: space-between;
     margin: auto;
     height: 100vh;
+    gap : 20px
 }
 .main__img--container{
     width: 400px;
@@ -184,6 +199,9 @@ body {
     border-radius: 200px;
 }
 
+.home__content {
+    text-align: center;
+}
 
 .home__content .je-suis{
     color: #ffb199;
@@ -271,15 +289,6 @@ body {
     padding:10px 0px 
 }
 
-.skills__content h2 {
-    color: #fff;
-    background-image:linear-gradient(to top, #ff0844 0%, #ffb199 100%);
-    background-clip: text;
-    -moz-background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-background-text-fill-color: transparent; 
-}
 .skills__img {
     width: 400px;
     height: 500px;
@@ -330,14 +339,14 @@ body {
     align-items: center;
     font-size:1.2rem;
     font-weight: 600;
-    color: #4837ff;
+    color: #37afff;
 }
 
-.skills--box h3 {
+.skills--box h4 {
     margin-left:1rem;
     font-size: 1rem;
     font-weight: 600;
-    color: #4837ff;
+    color: #37affF
 }
 
 .percent-bar {
@@ -374,12 +383,6 @@ body {
 
 /* Projects */
 
-
-.portfolio h1 {
-    color: #ffb199;
-    font-size: 3rem;
-    padding: 10px 0px
-}
 
 .portfolio__content {
     display: flex;
@@ -444,7 +447,7 @@ body {
 }
 
 /* on positionne le h2 en haut à gauche */
-.portfolio .card .box .content h2{
+.portfolio .card .box .content h3{
     position: absolute;
     top: -30px;
     right: 30px;
@@ -457,12 +460,12 @@ body {
 }
 
 /* on fonce le h2 quand on passe sur la card */
-.portfolio .card:hover .box .content h2 {
+.portfolio .card:hover .box .content h3 {
     color: rgba(0,0,0,0.06);
     
 }
 
-.portfolio .card .box .content h3 {
+.portfolio .card .box .content h4 {
     font-size : 1.8em;
     color: #777 ;
     z-index: 1;
@@ -484,7 +487,7 @@ body {
     margin-bottom: 30% ;
 }
 
-.portfolio .card:hover .box .content h3, .portfolio .card:hover .box .content p {
+.portfolio .card:hover .box .content h4, .portfolio .card:hover .box .content p {
     color:#fff
 }
 
@@ -581,15 +584,7 @@ body {
 .formulaire {
     width: 35%;    
 }
-/* 
-form label {
-    display: inline-block;
-    width: 150px;
-    font-size: 1rem;
-    color:#4837ff;
-    font-weight: 300;
-    text-align: left;    
-} */
+
 
 form input,
 form textarea {
@@ -615,31 +610,29 @@ form div {
     margin:0.2rem 0
 }
 
-.btn__form .btn{
+.btn.btn__form {
     margin-top: 1rem;
     display: flex;
     justify-content: center;
-    width: 40%;
-    padding: 15px 25px;
+    width: 60%;
     z-index: 0;
-    text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 600;
+} 
+
+.btn.btn__form::after {
+    z-index: 1000;
 }
 
 
-
-form .btn__form
+form div:last-child
 {
     justify-self: center;
     justify-content: center;
 }
 
-/* form textarea {
-    width: 100%;
-} */
 
-@media screen and (max-width : 800px) {
+@media screen and (max-width : 850px) {
     .navbar {
         width: 100%;
         padding : 0
@@ -661,13 +654,23 @@ form .btn__form
         background: #131313;
     }
 
+    .navbar__menu__content {
+        display: grid;
+        grid-template-columns: auto;
+        justify-items: center;
+        margin : 0;
+        width: 100%;
+        transition: all 0.5s ease;
+        height: 70vh;
+        z-index:-1;
+        font-size:1.6rem;
+        background: #131313;
+    }
+
     body.is-active {
         background-color: #141414;
         z-index: 1000;
-    }
-
-    .is-active header{
-        height: 100vh;
+        height: 100vh
     }
 
     .navbar__menu.is-active {
@@ -675,6 +678,12 @@ form .btn__form
         top: 80px;
         opacity: 1;
         z-index: 1000;
+        height: 100vh;
+    }
+
+    .navbar__menu__content .is-active ul{
+        
+        height: 70%;
     }
 
     #navbar__logo {
@@ -721,8 +730,8 @@ form .btn__form
         position:absolute;
         right:5%;
         transform: translate(5%,20%);
-        height: 40px;
-        width: 40px;
+        height: 30px;
+        width: 30px;
     }
 
     .navbar__btn {
